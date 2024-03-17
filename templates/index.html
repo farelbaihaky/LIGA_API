@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Standings</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('{{ url_for("static", filename="potoedit.png") }}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        img {
+            width: 100%; /* Menyesuaikan lebar container */
+            height: auto; /* Menjaga aspek rasio */
+        }
+
+        .title {
+    font-size: 3rem; /* Ukuran font besar */
+    position: absolute; /* Mengatur posisi absolut */
+    top: 30%; /* Menempatkan di tengah vertikal */
+    left: 65%; /* Menempatkan di tengah horizontal */
+    transform: translate(-50%, -50%); /* Menyesuaikan posisi relatif terhadap elemen sendiri */
+    font-family: 'Libre Franklin', sans-serif; /* Menggunakan font Libre Franklin */
+}
+
+
+
+.premier-league {
+    position: absolute; /* Mengatur posisi absolut */
+    top: 51%; /* Menempatkan di tengah vertikal */
+    left: 84%; /* Menempatkan di sebelah kiri dari tengah horizontal */
+    transform: translate(-50%, -50%); /* Menyesuaikan posisi relatif terhadap elemen sendiri */
+}
+
+.la-liga {
+    position: absolute; /* Mengatur posisi absolut */
+    top: 70%; /* Menempatkan di tengah vertikal */
+    left: 84%; /* Menempatkan di sebelah kanan dari tengah horizontal */
+    transform: translate(-50%, -50%); /* Menyesuaikan posisi relatif terhadap elemen sendiri */
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #9695FF;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #fe0fe3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Football's Top Leagues</h1>
+        <div class="league-selection">
+            <form method="post" action="/select_data">
+                <button class="btn btn-primary btn-lg premier-league" type="submit" name="data" value="premier_league">Premier League</button>
+                <button class="btn btn-primary btn-lg la-liga" type="submit" name="data" value="laliga">La Liga</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
